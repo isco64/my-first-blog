@@ -12,3 +12,6 @@ def portfolio(request):
 
 def contact(request):
     return render(request, "core/contact.html")
+
+def xuxetumare(request):
+    return render(request, "core/xuxetumare.html")
