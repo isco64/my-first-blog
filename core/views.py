@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.utils import timezone
+from .models import Post
 # Create your views here.
 
 def homes(request):
@@ -15,3 +17,9 @@ def contact(request):
 
 def xuxetumare(request):
     return render(request, "core/xuxetumare.html")
+
+def post_list(request):
+    #VARIABLE PARA GUARDAR QUERYSETS
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    #posts = Post.objects.all()
+    return render(request, 'core/list.html', {'posts':posts})

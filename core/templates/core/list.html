@@ -15,7 +15,12 @@
 
     <div>
         <h1><a href="/">IR A PAGINA PORTAFOLIO</a></h1>
-        {{posts}}
+        <!--BLOQUE QUE DESPLIEGA DATOS DE LA CONSULTA DE LA BASE DE DATOS-->
+        {%for post in posts%}
+        <p>publicado: {{post.published_date}}</p>
+        <h2><a href="">publicado: {{post.title}}</a></h2>
+        <p>{{post.text|linebreaksbr}}</p>
+        {%endfor%}
     </div>
 
     <div>
