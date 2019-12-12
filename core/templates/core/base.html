@@ -17,6 +17,7 @@
   <link
     href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
     rel='stylesheet' type='text/css'>
+  <link href="{% static 'core/css/blog.css' %}" rel="stylesheet">
   <link href="{% static 'core/css/clean-blog.min.css' %}" rel="stylesheet">
 
 </head>
@@ -25,7 +26,7 @@
   <!-- Navegación -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Juan Pérez</a>
+      <a class="navbar-brand" href="{%url 'casa'%}">Python Dev's</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -46,9 +47,13 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
+          </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link top-menu" href="{% url 'post_new' %}">Añadir Post<span class="glyphicon glyphicon-plus"></span></a>
+            <a class="nav-link" href="{% url 'post_new' %}">Añadir Post<span
+                class="glyphicon glyphicon-plus"></span></a>
           </li>
           {%endif%}
         </ul>
@@ -57,7 +62,7 @@
   </nav>
 
   <!-- Cabecera -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url({% static 'core/img/home-bg.jpg'%})">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -81,7 +86,8 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -89,7 +95,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/isco64/my-first-blog.git" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -97,7 +103,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.youtube.com/user/Google?hl=es" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
