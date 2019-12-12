@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #C25100;
+    background-color: slategray;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -43,4 +43,12 @@ h1, h2, h3, h4 {
 
 .post h2 a, .post h2 a:visited {
     color: #000000;
+}
+
+.color-fondo{
+    background-color: rgb(220, 227, 240);
+}
+
+.line-break{
+    word-break: break-all;
 }
