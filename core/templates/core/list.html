@@ -15,7 +15,7 @@
             <!--BLOQUE QUE DESPLIEGA DATOS DE LA CONSULTA DE LA BASE DE DATOS-->
             {%for post in posts%}
             <p class="line-break">publicado: {{post.published_date}}</p>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">publicado: {{post.title}}</a></h2>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
             <p class="line-break">{{post.text|linebreaksbr}}</p>
             {%endfor%}
         </div>
