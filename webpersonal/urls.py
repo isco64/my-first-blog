@@ -25,4 +25,5 @@ urlpatterns = [
     path('contact/', views.contact, name="contact"),
     path('xuxetumare/', views.xuxetumare, name="picozorra"),
     path('post_list/', views.post_list, name="zorra"),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
 ]

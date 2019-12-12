@@ -1,3 +1,4 @@
+{%extends 'core/base.html' %}
 <!DOCTYPE html>
 <html>
 
@@ -7,20 +8,35 @@
     <title>WENA CTM</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <!-- <script src='main.js'></script> -->
+    <script src='main.js'></script>
+
+    {% load static%}
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="{% static 'core/css/blog.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
-    <h1>PICO ZORRA XUZETUNARE</h1>
+    {% block content %}
+    <div class="page-header">
+        <h1>PICO ZORRA XUZETUNARE</h1>
+    </div>
 
-    <div>
+    <div class="post container">
+        <div class="row">
+            <div class="col-md-8">
+                <!--BLOQUE QUE DESPLIEGA DATOS DE LA CONSULTA DE LA BASE DE DATOS-->
+                {%for post in posts%}
+                <p>publicado: {{post.published_date}}</p>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">publicado: {{post.title}}</a></h2>
+                <p>{{post.text|linebreaksbr}}</p>
+                {%endfor%}
+            </div>
+        </div>
         <h1><a href="/">IR A PAGINA PORTAFOLIO</a></h1>
-        <!--BLOQUE QUE DESPLIEGA DATOS DE LA CONSULTA DE LA BASE DE DATOS-->
-        {%for post in posts%}
-        <p>publicado: {{post.published_date}}</p>
-        <h2><a href="">publicado: {{post.title}}</a></h2>
-        <p>{{post.text|linebreaksbr}}</p>
-        {%endfor%}
     </div>
 
     <div>
@@ -37,6 +53,7 @@
         <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
             gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
     </div>
+    {% endblock %}
 </body>
 
 </html>
