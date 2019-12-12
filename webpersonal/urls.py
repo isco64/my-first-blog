@@ -23,7 +23,6 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('portfolio/', views.portfolio, name="portfolio"),
     path('contact/', views.contact, name="contact"),
-    path('xuxetumare/', views.xuxetumare, name="picozorra"),
     path('post_list/', views.post_list, name="post_list"),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new', views.post_new, name='post_new'),

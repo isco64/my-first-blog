@@ -22,10 +22,6 @@ def contact(request):
     return render(request, "core/contact.html")
 
 
-def xuxetumare(request):
-    return render(request, "core/xuxetumare.html")
-
-
 def post_list(request):
     # VARIABLE PARA GUARDAR QUERYSETS
     posts = Post.objects.filter(
